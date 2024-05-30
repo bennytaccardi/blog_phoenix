@@ -6,8 +6,8 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :blog_phoenix, BlogPhoenix.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "",
   hostname: "localhost",
   database: "blog_phoenix_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
@@ -17,7 +17,7 @@ config :blog_phoenix, BlogPhoenix.Repo,
 # you can enable the server option below.
 config :blog_phoenix, BlogPhoenixWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "l2OnYt0TiqR1inZiRVsGuM3aiaZRxrqjv2y5HkJSjGfXRdseuEbu71KBJAgpJfco",
+  secret_key_base: "y9zaH2LhauVUxDRHR8H5sfEwM+XMceyJJ/3Wpm8sR5FOw+ABA4qPp0cZ5wVBlL0r",
   server: false
 
 # In test we don't send emails.

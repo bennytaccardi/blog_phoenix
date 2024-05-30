@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :blog_phoenix, BlogPhoenix.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "root",
+  password: "",
   hostname: "localhost",
   database: "blog_phoenix_dev",
   stacktrace: true,
@@ -23,11 +23,8 @@ config :blog_phoenix, BlogPhoenixWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "g4c2bmCiYGGun4GUTtFxl6Fxb/oxEbHMxUrRtnvOu58vRqyzBfsXMrbVnV7Oxrzn",
-  watchers: [
-    esbuild: {Esbuild, :install_and_run, [:blog_phoenix, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:blog_phoenix, ~w(--watch)]}
-  ]
+  secret_key_base: "9ChmflCVyp+mUUi9M4PA3713NsyadgOTvkNvDXhDZFG4wUJj45p/4XM8/gVPJbi8",
+  watchers: []
 
 # ## SSL Support
 #
@@ -52,16 +49,6 @@ config :blog_phoenix, BlogPhoenixWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :blog_phoenix, BlogPhoenixWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/blog_phoenix_web/(controllers|live|components)/.*(ex|heex)$"
-    ]
-  ]
-
 # Enable dev routes for dashboard and mailbox
 config :blog_phoenix, dev_routes: true
 
@@ -74,12 +61,6 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-config :phoenix_live_view,
-  # Include HEEx debug annotations as HTML comments in rendered markup
-  debug_heex_annotations: true,
-  # Enable helpful, but potentially expensive runtime checks
-  enable_expensive_runtime_checks: true
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
